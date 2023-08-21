@@ -58,6 +58,11 @@ public class Principal extends javax.swing.JFrame {
 
         btnLimpiar.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         btnLimpiar.setText("Limpiar");
+        btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimpiarActionPerformed(evt);
+            }
+        });
 
         txtMensaje.setColumns(20);
         txtMensaje.setRows(5);
@@ -138,6 +143,14 @@ public class Principal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
+        
+        txtUsuario.setText("");
+        txtContrasenia.setText("");
+        txtMensaje.setText("");
+        
+    }//GEN-LAST:event_btnLimpiarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLimpiar;
