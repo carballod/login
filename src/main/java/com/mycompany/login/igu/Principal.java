@@ -5,11 +5,10 @@ import com.mycompany.login.logica.Controladora;
 
 public class Principal extends javax.swing.JFrame {
 
-    Controladora control = null;
+    Controladora control = new Controladora();
     
     public Principal() {
         initComponents();
-        control = new Controladora();
     }
 
     
@@ -54,6 +53,8 @@ public class Principal extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel3.setText("Contraseña:");
 
+        txtUsuario.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+
         jSeparator1.setBorder(javax.swing.BorderFactory.createCompoundBorder());
 
         jSeparator2.setBorder(javax.swing.BorderFactory.createCompoundBorder());
@@ -76,8 +77,11 @@ public class Principal extends javax.swing.JFrame {
 
         txtMensaje.setEditable(false);
         txtMensaje.setColumns(20);
+        txtMensaje.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         txtMensaje.setRows(5);
         jScrollPane1.setViewportView(txtMensaje);
+
+        txtContrasenia.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -138,7 +142,7 @@ public class Principal extends javax.swing.JFrame {
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
