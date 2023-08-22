@@ -1,11 +1,15 @@
 package com.mycompany.login.igu;
 
+import com.mycompany.login.logica.Controladora;
+
 
 public class Principal extends javax.swing.JFrame {
 
-
+    Controladora control = null;
+    
     public Principal() {
         initComponents();
+        control = new Controladora();
     }
 
     
@@ -56,6 +60,11 @@ public class Principal extends javax.swing.JFrame {
 
         btnLogin.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         btnLogin.setText("Login");
+        btnLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLoginActionPerformed(evt);
+            }
+        });
 
         btnLimpiar.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         btnLimpiar.setText("Limpiar");
@@ -153,6 +162,16 @@ public class Principal extends javax.swing.JFrame {
         txtMensaje.setText("");
         
     }//GEN-LAST:event_btnLimpiarActionPerformed
+
+    private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
+        
+        String usuario = txtUsuario.getText();
+        String contrasenia = txtContrasenia.getText();
+        String mensaje = control.validarUsuario(usuario, contrasenia);
+        
+        txtMensaje.setText(mensaje);
+        
+    }//GEN-LAST:event_btnLoginActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLimpiar;
