@@ -3,11 +3,11 @@ package com.mycompany.login.igu;
 import com.mycompany.login.logica.Controladora;
 
 
-public class Principal extends javax.swing.JFrame {
+public class LoginInicial extends javax.swing.JFrame {
 
     Controladora control = new Controladora();
     
-    public Principal() {
+    public LoginInicial() {
         initComponents();
     }
 
