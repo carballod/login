@@ -1,6 +1,7 @@
 package com.mycompany.login.igu;
 
 import com.mycompany.login.logica.Controladora;
+import com.mycompany.login.logica.Usuario;
 
 
 public class LoginInicial extends javax.swing.JFrame {
@@ -171,9 +172,27 @@ public class LoginInicial extends javax.swing.JFrame {
         
         String usuario = txtUsuario.getText();
         String contrasenia = txtContrasenia.getText();
-        String mensaje = control.validarUsuario(usuario, contrasenia);
+        Usuario usr = control.validarUsuario(usuario, contrasenia);
         
-        txtMensaje.setText(mensaje);
+        if (usr !=null) {
+            String rol = usr.getUnRol().getNombreRol();
+            
+            if (rol.equals("admin")) {
+                PrincipalAdmin pAdmin = new PrincipalAdmin(control, usr);
+                pAdmin.setVisible(true);
+                pAdmin.setLocationRelativeTo(null);
+                this.dispose();
+                
+            } else if (rol.equals("user")) {
+                PrincipalUser pUser = new PrincipalUser(control, usr);
+                pUser.setVisible(true);
+                pUser.setLocationRelativeTo(null);
+                this.dispose();
+            }
+        } else {
+            txtMensaje.setText("Usuario o contrasena incorrectos");  
+        }
+        
         
     }//GEN-LAST:event_btnLoginActionPerformed
 
